@@ -1,0 +1,21 @@
+
+
+//스와이퍼 js 화살표 리셋팅하는법
+<html>
+  <style>
+    .swiper-button-next {
+      background: url(/godiva/img/common/next.png) no-repeat;
+      background-size: 50% auto;
+      background-position: center;
+    }
+    
+    .swiper-button-prev {
+      background: url(/godiva/img/common/prev.png) no-repeat;
+    }
+    
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      display: none;
+    }
+  </style>
+</html>

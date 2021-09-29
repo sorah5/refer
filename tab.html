@@ -1,0 +1,127 @@
+   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contents{
+            width: 100%;
+            height: 200px;
+            position: relative;
+        }
+        h3{
+            width: 100px;
+            height: 30px;
+            background-color: #aaa;
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            font-size: 16px;
+            position: absolute;
+            top: -16px;
+            left: 0;
+            cursor: pointer;
+        }
+        h3.on{
+            background-color: #000;
+        }
+        h3.move{
+            left: 101px;
+        }
+        .notice_gal{
+            width: 400px;
+            height: 150px;
+            background-color: #ddd;
+        }
+        .notice_gal ul{
+           display: none;
+        }
+        .notice_gal ul.on{
+            display: block;
+            padding-top: 50px;
+        }
+        .notice_gal ul .notice{
+            width: 100%;
+        }
+        .notice_gal ul .notice li{
+            width: 100%;
+            height: 28px;
+            line-height: 28px;
+            position: relative;
+            font-size: 15px;
+        }
+        .notice_gal ul .notice li:nth-child(2n){
+            background-color: #bbb;
+        }
+        .notice_gal ul .notice li:hover{
+            font-weight: bold;
+        }
+        .notice_gal ul .notice li a{
+            padding-left: 5px;
+        }
+        
+        .notice_gal ul.gal{
+            width: 100%;
+        }
+        .notice_gal ul .gal li{
+            float: left;
+            padding-left: 10px;
+            padding-top: 25px;
+        }
+        .notice_gal ul.gal li:hover{
+           opacity: 0.7;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="contents">
+        <section class="notice_gal">
+            <h3 class="on">공지사항 </h3>
+            <ul class="notice on">
+                <li>
+                    <a href="">안녕하세요</a>
+                </li>
+                <li>
+                    <a href="">안녕하세요</a>
+                </li>
+                <li>
+                    <a href="">안녕하세요</a>
+                </li>
+                <li>
+                    <a href="">안녕하세요</a>
+                </li>
+            </ul>
+            <h3 class="move">갤러리</h3>
+            <ul class="gal">
+                <li>
+                    <a href="">d안녕히가세요</a>
+                </li>
+                <li>
+                    <a href="">안녕</a>
+                </li>
+                <li>
+                    <a href="">바이</a>
+                </li>
+                <li>
+                    <a href="">굳</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script>
+        $("h3").click(function(){
+            $(this).addClass("on").siblings().removeClass("on");
+            // ---h3를 클릭했을떄, on이라는 속성을 더해주면 다른애는 on이라는 속성 사라짐
+            $(this).next("ul").addClass("on");
+            //--- 그다음으로 ul에 on이라는 속성부여
+        });
+    </script>
+</body>
+</html>
